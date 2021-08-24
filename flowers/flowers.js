@@ -1,10 +1,11 @@
 import { renderFlowers } from '../render.utils.js';
 import { flowerTypes } from '../data.js';
 
-const section = document.getElementById('flowers-section'); 
+const ul = document.getElementById('flowers'); 
 
 for (let flower of flowerTypes){
-    const flowersSection = renderFlowers(flower); 
-    section.append(flowersSection);
+    const li = renderFlowers(flower); 
+    ul.append(li);
 }
 
+console.log(ul);

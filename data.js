@@ -4,7 +4,7 @@ export const flowerTypes = [
         name: 'Rose',
         price: 14, 
         amount: 1,
-        image: 'assets/Rose.jpeg'
+        image: '../assets/Rose.jpeg'
 
     }, 
     {
@@ -12,27 +12,27 @@ export const flowerTypes = [
         name: 'Lily', 
         price: 20, 
         amount: 1, 
-        image: 'assets/Lily.jpeg'
+        image: '../assets/Lily.jpeg'
     },
     {
         id: 3, 
-        name: 'ranunculus', 
+        name: 'Ran', 
         price: 40, 
         amount: 1, 
-        image: 'assets/Ran..jpeg'
+        image: '../assets/Ran.jpeg'
     }, 
     {
         id: 4, 
         name: 'Orchid', 
         price: 10, 
         amount: 1, 
-        image: 'assets/white.jpeg'
+        image: '../assets/white.jpeg'
     },
     {
         id: 5, 
         name: 'Daisy', 
         price: 5, 
         amount: 1, 
-        image: 'assets/Daisy.jpeg'
+        image: '../assets/Daisy.jpeg'
     }
 ];

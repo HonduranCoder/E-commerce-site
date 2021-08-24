@@ -20,8 +20,9 @@ export function renderFlowers(flowerTypes){
     img.src = flowerTypes.image;
     price.textContent = `${flowerTypes.price}`;
     amount.textContent = `${flowerTypes.amount}`;
+    //addButton.textContent = add;
 
-    flexSection.append(h3, img.src, price, amount, addButton);
+    flexSection.append(h3, price, amount, addButton);
 
     li.append(
         h3, 
