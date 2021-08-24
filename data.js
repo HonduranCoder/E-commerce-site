@@ -19,7 +19,7 @@ export const flowerTypes = [
         name: 'ranunculus', 
         price: 40, 
         amount: 1, 
-        image: 'assets/Ran.jpeg'
+        image: 'assets/Ran..jpeg'
     }, 
     {
         id: 4, 
