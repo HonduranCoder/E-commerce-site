@@ -1,6 +1,7 @@
 import { findById } from '../utils.js';
 import { flowerTypes } from '../data.js';
-import { calcItemTotal } from '../test/utils.test.js'
+import { calcItemTotal } from '../utils.js';
+import { cart } from './cart.data.js';
 
 export function renderTable(cartInfo){
     const tr = document.createElement('tr'); 
@@ -11,21 +12,18 @@ export function renderTable(cartInfo){
 
     const floral = findById(flowerTypes, cartInfo.id); 
 
-    nameT.textContent = floral.nameTd; 
+    nameT.textContent = floral.name; 
     priceT.textContent = floral.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     quantityT.textContent = cartInfo.quantity; 
 
-    const total = getTotal(floral.price, floral.quantity); 
+    const total = calcItemTotal(cartInfo.quantity, floral.price); 
+    console.log(total);
+    console.log(floral.price, cart.quantity);
 
     totalT.textContent = total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     tr.append(nameT, priceT, quantityT, totalT); 
 
     return tr;
-}
-
-function getTotal(price, quantity){
-    const total = price * quantity; 
-    return total;
 }
 
 export function orderTotal(allFlorals, wholeCart){
@@ -38,3 +36,5 @@ export function orderTotal(allFlorals, wholeCart){
     }
     return accumulator.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
+
+//I envisioned this as a robot having to go to 2 different rooms - one that had the product data, the other that had the cart data. The robot has to go to each room to get the data points needed for one item-level subtotal. Each time the robot has one item-level subtotal, they write it down in the hallway outside the rooms on their ‘accumulator’ notepad. -Diyana

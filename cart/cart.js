@@ -1,6 +1,6 @@
-import { renderTable } from './render.table.js';
-import { cart } from 'cart.js'; 
+import { orderTotal, renderTable } from './render.table.js';
 import { flowerTypes } from '../data.js';
+import { cart } from './cart.data.js';
 
 const tableBody = document.querySelector('tbody'); 
 
@@ -9,8 +9,8 @@ for (let item of cart){
     tableBody.append(tr); 
 }
 
-const total = wholeCart(flowerTypes, cart); 
+const total = orderTotal(flowerTypes, cart); 
 
-const totalT = document.querySelector('#total');
+const totalT = document.getElementById('total');
 
 totalT.textContent = total;

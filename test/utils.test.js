@@ -1,6 +1,7 @@
-import { findById } from "../utils.js";
-import { calcItemTotal } from "../utils.js";
-import { flowerTypes } from "../data.js";
+import { findById } from '../utils.js';
+import { calcItemTotal } from '../utils.js';
+import { flowerTypes } from '../data.js';
+import { renderFlowers } from '../render.utils.js';
 
 const test = QUnit.test; 
 
@@ -11,7 +12,7 @@ test('calcItemTotal should take in amount and price and return the total', (expe
 });
 
 test('renderTable should take in a flower and return the correct HTML elements', (expect)=>{
-    const expected = `li class = "flower" id = "flower"><h3 class = "flower-name">Rose:</h3> </li><img class = "flower-image" src = "https://images.unsplash.com/photo-1559563362-c667ba5f5480?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1290&q=80"/><p class = "price">Price: $ </p><p class = "amount">Amount: </p><button id = "button">Add</button>`;
+    const expected = `<li class="flower"id="flower"><h3 class="flower-name">Rose</h3></li><img class="flower-image" src="https://images.unsplash.com/photo-1559563362-c667ba5f5480?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1290&q=80..assets/Rose.jpeg/\"><p class = "price">Price:$14</p><p class = "amount">Amount:1</p><section><button id=class="add"><"/button">Add</buttsection></li>`;
 
     const actual = renderFlowers({
         id: 1,
