@@ -7,5 +7,3 @@ for (let flower of flowerTypes){
     const li = renderFlowers(flower); 
     ul.append(li);
 }
-
-console.log(ul);
