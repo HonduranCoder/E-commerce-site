@@ -17,8 +17,6 @@ export function renderTable(cartInfo){
     quantityT.textContent = cartInfo.quantity; 
 
     const total = calcItemTotal(cartInfo.quantity, floral.price); 
-    console.log(total);
-    console.log(floral.price, cart.quantity);
 
     totalT.textContent = total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     tr.append(nameT, priceT, quantityT, totalT); 

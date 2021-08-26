@@ -1,3 +1,4 @@
+import { addToCart } from './localstorage.utils.js';
 
 export function renderFlowers(flowerTypes){
     const li = document.createElement('li');
@@ -8,6 +9,9 @@ export function renderFlowers(flowerTypes){
     const amount = document.createElement('p');
     const addButton = document.createElement('button');
 
+    addButton.addEventListener('click',()=>{
+        addToCart(flowerTypes.id);
+    });
 
     li.classList.add('flower'); 
     h3.classList.add('flower-name'); 
