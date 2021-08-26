@@ -2,6 +2,7 @@ import { findById } from '../utils.js';
 import { calcItemTotal } from '../utils.js';
 import { flowerTypes } from '../data.js';
 import { renderFlowers } from '../render.utils.js';
+import { getCart } from '../localstorage.utils.js';
 
 const test = QUnit.test; 
 
@@ -39,3 +40,25 @@ test('findById should take in an id and an array and return the matching id obje
     expect.deepEqual(actual, expected);
 });
 
+/* ...should be in a separate file
+  const cart [
+        {
+            id: 4, 
+            quantity: 10,
+        }, 
+        {
+            id: 6,
+            quantity: 9,
+        }
+    ]
+
+test ('getCart should return whatever array is in the CART key of localStorage'), (expect) =>{
+    const floralCart = JSON.stringify(cart); 
+    localStorage.setItem('CART', floralCart);
+
+    const actual = getCart(); 
+
+    expect.deepEqual(actual, cart);
+};
+
+*/
