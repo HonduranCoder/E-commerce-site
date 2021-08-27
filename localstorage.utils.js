@@ -1,6 +1,9 @@
 import { findById } from './utils.js';
+import { flowerTypes } from './data.js'
+//import { addToFlowers } from './localstorage.utils.js'
 
-const CART = 'CART'; 
+export const CART = 'CART'; 
+export const PRODUCTS = 'PRODUCTS';
 
 export function getCart() {
     // go and see what's in local storage under the key of CART
@@ -22,6 +25,34 @@ export function setCart(cartArray){
     localStorage.setItem(CART, floralCart);
 }
 
+export function getFlowers(){
+    const stringyFlorals = localStorage.getItem(PRODUCTS); 
+    if (!stringyFlorals){ 
+        return flowerTypes; //original hardcoded data
+    }
+    const finalFloral = JSON.parse(stringyFlorals);
+    return finalFloral;
+}
+
+export function setProducts(flowersArray){
+    const stringyFlorals=JSON.stringify(flowersArray); 
+    localStorage.setItem(PRODUCTS, stringyFlorals);
+}
+
+export function addToFlowers(flowerObject){
+    const flowers = getFlowers(); 
+    flowers.push(flowerObject);
+    setProducts(flowers);
+}
+
+/* Updating in Local Storage but not browser...
+const PRODUCTS_KEY = 'PRODUCTS'; 
+let flowers = localStorage.getItem(PRODUCTS_KEY);
+if(!flowers){
+    flowers = JSON.stringify(flowerTypes); 
+    localStorage.setItem(PRODUCTS_KEY, fruits);
+}
+*/
 export function addToCart(idOfFlowers){
     // 0) grab the cart from local storage
     const cart = getCart();

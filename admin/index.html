@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Products</title>
+</head>
+<!-- {
+        id: 1,
+        name: 'Rose',
+        price: 14, 
+        amount: 1,
+        image: '../assets/Rose.jpeg'
+
+    },  -->
+<body>
+    <main>
+        <section class ="main-section">
+        <h2>Add New Product</h2>
+        <form id = "form">
+            <label>ID
+                <input required name = "id" type ="number"/>
+            </label>
+            <label>Name
+                <input required name="name"/>
+            </label>    
+            <label>Price
+                <input reuqired name="price" type ="number"/>
+            </label>
+            <label>Amount
+                <input required name="amount" type = "number"/>
+            </label>
+            <label>Image
+                <input required name="image"/>
+            </label>
+            <button class = "button">Submit</button>
+        </form>
+    </section>
+    </main>
+    <script type="module" src="./admin.js"></script>
+</body>
+</html>
