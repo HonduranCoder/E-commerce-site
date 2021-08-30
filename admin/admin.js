@@ -7,10 +7,10 @@ form.addEventListener('submit', (event)=>{
     const data = new FormData(form); 
 
     const flower = {
-        id: data.get('id'),
+        id: data.get Number(('id')),
         name: data.get('name'),
-        price: data.get('price'),
-        amount: data.get ('amount'),
+        price: data.get Number(('price')),
+        amount: data.get Number(('amount')),
         image: data.get('image'),
     }; 
     addToFlowers(flower);
